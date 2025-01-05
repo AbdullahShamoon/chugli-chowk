@@ -37,21 +37,23 @@ const Chat = (props) => {
     }
 
     return (
-        <div>
-            <h3>Room : {props.room}</h3>
-            <div>
-                {messages.map((message) => (
-                    <div key={message.id}>
-                        <span>{message.user} : </span>
-                        <span>{message.text}</span>
-                    </div>
-                ))}
+        <>
+            <div className="component flex flex-col justify-center items-center">
+                <h3>Room : {props.room}</h3>
+                <div>
+                    {messages.map((message) => (
+                        <div key={message.id}>
+                            <span>{message.user} : </span>
+                            <span>{message.text}</span>
+                        </div>
+                    ))}
+                </div>
+                <form onSubmit={handleSubmit} action="">
+                    <input type="text" placeholder='Enter your Message' onChange={(e) => setNewMessage(e.target.value)} value={newMessage} />
+                    <button type='submit'>Send</button>
+                </form>
             </div>
-            <form onSubmit={handleSubmit} action="">
-                <input type="text" placeholder='Enter your Message' onChange={(e) => setNewMessage(e.target.value)} value={newMessage} />
-                <button type='submit'>Send</button>
-            </form>
-        </div>
+        </>
     )
 }
 
