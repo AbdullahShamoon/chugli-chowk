@@ -4,6 +4,7 @@ import Cookies from 'universal-cookie'
 import Chat from './components/Chat';
 import { signOut } from 'firebase/auth';
 import { auth } from './firebase-config';
+import Background from './components/Background';
 
 const cookies = new Cookies();
 
@@ -23,6 +24,7 @@ const App = () => {
   if (!isAuth) {
     return (
       <div>
+        <Background />
         <Auth setIsAuth={setIsAuth} />
       </div>
     )
@@ -30,6 +32,7 @@ const App = () => {
 
   return (
     <>
+      <Background />
       {room ? <Chat room={room} /> : <div>
         <label htmlFor="">Enter Room Name : </label>
         <input type="text" ref={roomRef} />
