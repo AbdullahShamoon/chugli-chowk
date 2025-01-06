@@ -43,7 +43,7 @@ Follow these instructions to set up the project on your local machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/chugli-chowk.git
+   git clone https://github.com/AbdullahShamoon/chugli-chowk.git
    cd chugli-chowk
    ```
 
